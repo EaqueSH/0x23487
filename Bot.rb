@@ -4,7 +4,7 @@ require 'discordrb'
 require 'open-uri'
 require 'json'
 
-bot = Discordrb::Commands::CommandBot.new token: '', prefix: './'
+bot = Discordrb::Commands::CommandBot.new token: 'NTI5MjkyNzg4MTkwMjgxNzI4.Dwuwgg.HHSjzXONXFEzXxwpgXoa5Qr3hU0', prefix: './'
 
 
 bot.mention do |event|
@@ -38,6 +38,7 @@ bot.command :Profile_ip do |profile_ip, *args|
 	kaka = JSON.parse(r)
 
 	profile_ip.respond("Ip: #{kaka["ip"]}\nCity: #{kaka["city"]}")
+	
 
 	
 
@@ -45,4 +46,7 @@ bot.command :Profile_ip do |profile_ip, *args|
 
 end
 
+bot.command :tlen do |tlen, *args|
+	bot.respond("test")
+end
 bot.run
