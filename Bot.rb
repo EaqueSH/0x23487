@@ -4,7 +4,7 @@ require 'discordrb'
 require 'open-uri'
 require 'json'
 
-bot = Discordrb::Commands::CommandBot.new token: 'NTI5MjkyNzg4MTkwMjgxNzI4.Dwuwgg.HHSjzXONXFEzXxwpgXoa5Qr3hU0', prefix: './'
+bot = Discordrb::Commands::CommandBot.new token: '', prefix: './'
 
 
 bot.mention do |event|
