@@ -45,8 +45,18 @@ bot.command :Profile_ip do |profile_ip, *args|
 
 
 end
-
-bot.command :tlen do |tlen, *args|
-	bot.respond("test")
+bot.command :tlen do |e, *args|
+	event.channel.send_embed do |e|
+          e.title = "Some general info about #{mention.name}"
+          e.add_field(name: "ID", value: "`#{mention.id}`")
+          e.add_field(name: "Distinct (username#0000)", value: "#{mention.distinct}")
+          e.add_field(name: "Nickname", value: "#{mention.on(event.server).nick}")
+          e.add_field(name: "Game", value: "#{mention.game}")
+          e.add_field(name: "Created On", value: "#{mention.creation_time}")
+          e.add_field(name: "Joined This Server On", value: "#{mention.on(event.server).joined_at}")
+          e.color = colors
 end
+
+
+
 bot.run
